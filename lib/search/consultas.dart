@@ -5,6 +5,7 @@ import 'package:master_solution/modelo/materia.dart';
 import 'package:master_solution/pages/formularios/formulario_aula.dart';
 import 'package:master_solution/pages/formularios/formulario_estudiante.dart';
 import 'package:master_solution/pages/formularios/formulario_horario.dart';
+import 'package:master_solution/pages/formularios/formulario_horarioEst.dart';
 import 'package:master_solution/pages/formularios/formulario_matera.dart';
 import 'package:master_solution/pages/informacion_estudiante.dart';
 import 'package:master_solution/providers/aula_provider.dart';
@@ -129,7 +130,17 @@ class ConsultarEstudiantes extends SearchDelegate {
                         return GestureDetector(
                           child: informacionRegistro(listaSugerida[i]),
                           onTap: () {
-                            showResults(context);
+                            if (tipo == tipoDeBusqueda.horario) {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => FormularioHorarioEst(
+                                        nombre: listaSugerida[i].descripcion,
+                                        idHorario: listaSugerida[i].id),
+                                  ));
+                            } else {
+                              showResults(context);
+                            }
                           },
                         );
                       },

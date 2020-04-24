@@ -15,7 +15,7 @@ class _FormularioHorarioState extends State<FormularioHorario> {
   String _descripcion;
   String _horarioInicial;
   String _horarioFinal;
-  String _diaSemana;
+  String _diaSemana = "Lunes";
   String _idCurso;
   String _idMateria;
 
@@ -74,7 +74,7 @@ class _FormularioHorarioState extends State<FormularioHorario> {
                   height: 20,
                 ),
                 CustomDropDown(
-                    selectedObject: "Lunes",
+                    selectedObject: _diaSemana,
                     objects: [
                       "Lunes",
                       "Martes",

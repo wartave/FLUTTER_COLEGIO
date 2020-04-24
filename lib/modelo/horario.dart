@@ -35,7 +35,7 @@ class Horario {
   });
 
   Horario.fromJsonMap(Map<String, dynamic> json) {
-    id = json['_id'];
+    id = json['id'];
     descripcion = json['descripcion'];
     horaInicial = json['horaInicial'];
     horaFinal = json['horaFinal'];

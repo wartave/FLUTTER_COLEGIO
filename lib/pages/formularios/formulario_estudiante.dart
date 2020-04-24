@@ -64,7 +64,7 @@ class _FormularioEstudianteState extends State<FormularioEstudiante> {
                               DateTime.now().month, DateTime.now().day))
                       .then((date) {
                     setState(() {
-                      _fechaNacimiento = date as String;
+                      _fechaNacimiento = date.toString();
                     });
                   });
                 },
@@ -74,9 +74,11 @@ class _FormularioEstudianteState extends State<FormularioEstudiante> {
                       text: _fechaNacimiento,
                       keyboardType: TextInputType.text,
                       onChanged: (value) {
-                        print(value);
                         setState(() {
-                          _fechaNacimiento = value;
+                          if (value != null) {
+                            print(value.toString());
+                            _fechaNacimiento = value.toString();
+                          }
                         });
                       }),
                 ),
